@@ -1,0 +1,1 @@
+In this case, table Employee_Meeting is not created by Hibernate. You have to explicitly do this in your database. This is because in our hibernate.cfg.xml file, we have define value for key hibernate.hbm2ddl.auto to validate. Change it to create-drop or create to let Hibernate create schema for you. Read this article for more details

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.vani">
+ 
+    <class name="EmployeeDetail" table="EMPLOYEEDETAIL">
+        <id name="employeeId" type="java.lang.Long" column="EMPLOYEE_ID">
+            <generator class="foreign">
+            	<param name="property">employee</param>
+            </generator>
+        </id>
+       
+        <property name="street" column="STREET"/>
+        <property name="city" column="CITY"/>
+        <property name="state" column="STATE"/>
+        <property name="country" column="COUNTRY"/>
+        
+        <one-to-one name="employee" class="com.vani.Employee" constrained="true" />
+    </class>
+ 
+</hibernate-mapping>
